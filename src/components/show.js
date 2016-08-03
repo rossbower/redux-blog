@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as actions from '../actions/index';
 import { connect } from 'react-redux';
 import Textarea from 'react-textarea-autosize';
+import marked from 'marked';
 
 class Show extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class Show extends Component {
             </div>
           </div>
           <h5> tags: {this.props.current.tags} </h5>
-          <div id="postcontent">{this.props.current.content}</div>
+          <div id="postcontent" dangerouslySetInnerHTML={{ __html: marked(this.props.current.content || '') }} />
         </div>
       );
     } else {
