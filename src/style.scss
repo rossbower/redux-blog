@@ -1,7 +1,175 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: darken(white, 10%);
-  margin: 50px;
+  background-image: url("http://www.7-wallpapers.com/wp-content/uploads/2016/05/hd-abstract-background.jpg");
+  margin: 44px;
   font-size: 16px;
+  background-size: cover;
+  min-height: 700px;
+  min-width: 250px;
+}
+
+a {
+  color:black;
+  border: none;
+}
+
+a:hover {
+  background: none;
+}
+
+h5 {
+  color: white;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba(169, 34, 143,.8);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+i:hover {
+  color: white;
+  border-color: white;
+}
+
+#navLink:hover {
+  color: white;
+}
+
+input {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  background-color: rgba(255,255,255,0.85);
+  border: none;
+}
+
+#submit, #cancel {
+  color: black;
+  background: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+  border-width: thin;
+  border-color: black;
+  border-style: solid;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#submit:hover, #cancel:hover {
+  color: white;
+  border-color: white;
+}
+
+ul {
+  background-color: rgba(255,255,255,.5);
+  border-radius: 5px;
+  list-style: none;
+  margin:0px;
+  padding: 0px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  font-color:white;
+  padding: 5px;
+}
+
+li:hover {
+  background-color: rgba(188, 72, 143,.6);
+  border-radius: 5px;
+}
+
+homelink:hover {
+  background-color: rgba(188, 72, 143,.6);
+  border-radius: 5px;
+  color: white;
+}
+
+#cancel-submit {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+#titlebar {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0px;
+  margin-top:20px;
+}
+
+#textarea {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(255,255,255,0.85);
+}
+
+#titletextarea {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  width: 87%;
+  max-width: 87%;
+  background-color: rgba(255,255,255,0.85);
+}
+
+#type {
+  font-size: 16px;
+}
+
+#heading {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+#posttitle {
+  font-style: normal;
+}
+
+#postcontent {
+  margin-top: 10px;
+}
+
+#edit:hover, #delete:hover {
+  border-radius: 5px;
+  background-color: black;
+  padding: 2px;
+}
+
+#edit, #delete {
+  padding: 2px;
+}
+
+#postcontent {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  padding: 5px;
 }
