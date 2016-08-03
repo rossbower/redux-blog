@@ -8,15 +8,23 @@ class New extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      title: '',
+      tags: '',
+      content: '',
+    };
+
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  /* onSubmit={actions.createPost(`{ title: ${document.getElementById('title').value},
-                                        tags: ${document.getElementById('tags').value},
-                                        content: ${document.getElementById('content').value} }`)}*/
-
-  onSubmit() {
-    actions.createPost(`{ title: ${document.getElementById('title').value}, tags: ${document.getElementById('tags').value}, content: ${document.getElementById('content-form').value} }`);
+  onSubmit(event) {
+    event.preventDefault();
+    const newpost = {
+      title: this.state.title,
+      tags: this.state.tags,
+      content: this.state.content,
+    };
+    this.props.createPost(newpost);
   }
 
   render() {
@@ -24,11 +32,11 @@ class New extends Component {
       <div id="content">
         <h2>New Post</h2>
         <form>
-          <input type="text" placeholder="title" id="title" />
-          <input type="text" placeholder="tags" id="tags" />
-          <input type="text" placeholder="content" id="content-form" />
+          <input type="text" placeholder="title" id="title" onChange={(event) => this.setState({ title: event.target.value })} />
+          <input type="text" placeholder="tags" id="tags" onChange={(event) => this.setState({ tags: event.target.value })} />
+          <input type="text" placeholder="content" id="content-form" onChange={(event) => this.setState({ content: event.target.value })} />
           <div id="cancel-submit">
-            <input id="submit" type="Submit" value="Submit" onClick={this.onSubmit} />
+            <input id="submit" type="submit" onClick={this.onSubmit} />
             <Link to="/" id="cancel">Cancel</Link>
           </div>
         </form>
