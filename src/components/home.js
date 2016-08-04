@@ -6,12 +6,32 @@ import '../style.scss';
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+
+    this.onReset = this.onReset.bind(this);
+  }
 
   componentWillMount() {
     this.props.fetchPosts();
   }
 
-  // mapDispatchToProps(dispatch) {
+  onReset() {
+    this.props.posts.map((post) => {
+      this.props.deletePost(post.id);
+    });
+  }
+
+  // onReset() {
+  //   function reset() {
+  //     this.props.posts.map((post) => {
+  //       this.props.deletePost(post.id);
+  //       return null;
+  //     });
+  //   }
+  //
+  //   reset().then(location.reload());
   // }
 
   render() {
@@ -23,6 +43,7 @@ class Home extends Component {
           return <Link id="homelink" to={`/posts/${post.id}`} key={post.id}><li> <i id="posttitle">{post.title}</i><i>{post.tags}</i> </li></ Link>;
         })}
         </ul>
+        <Link to="/" id="reset"><i className="fa fa-bomb fa" aria-hidden="true" onClick={this.onReset}> RESET BLOG</i></Link>
       </div>
     );
   }
