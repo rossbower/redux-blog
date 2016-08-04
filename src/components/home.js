@@ -37,7 +37,7 @@ class Home extends Component {
   render() {
     return (
       <div id="content">
-        <h2 id="heading1">Posts</h2>
+        <h2>Posts</h2>
         <ul>
         {this.props.posts.map((post) => {
           return <Link id="homelink" to={`/posts/${post.id}`} key={post.id}><li> <i id="posttitle">{post.title}</i><i>{post.tags}</i> </li></ Link>;

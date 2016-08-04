@@ -1,5 +1,7 @@
 #HW 4 - Ross Bower
 
+I created a blog website with individual routes for new, home, and post views. The posts are editable. Everything works :)
+
 Extra Credit:
   - Looks snazzy (x10)
   - Markdown included
