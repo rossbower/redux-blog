@@ -17,7 +17,7 @@ export default function (ComposedComponent) {
     }
 
     render() {
-      return <div></div>;
+      return <ComposedComponent {...this.props} />;
     }
   }
 

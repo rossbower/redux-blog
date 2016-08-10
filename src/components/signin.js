@@ -20,17 +20,8 @@ class SignIn extends Component {
   onSubmit(event) {
     event.preventDefault();
     if (this.state.SignIn) {
-      // const user = {
-      //   email: this.state.email,
-      //   password: this.state.password,
-      // };
       this.props.signinUser({ email: this.state.email, password: this.state.password });
     } else {
-      // const user = {
-      //   name: this.state.name,
-      //   email: this.state.email,
-      //   password: this.state.password,
-      // };
       this.props.signupUser({ name: this.state.name, email: this.state.email, password: this.state.password });
     }
   }

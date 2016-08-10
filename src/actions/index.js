@@ -47,6 +47,7 @@ export function updatePost(post) {
 }
 
 export function fetchPost(id) {
+  console.log(`fetchpost ${id}`);
   return (dispatch) => {
     axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
       dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });
@@ -96,7 +97,7 @@ export function signupUser({ name, email, password }) {
   return (dispatch) => {
     // does an axios.post on the /signup endpoint (only difference from above)
     const user = { name, email, password };
-    axios.post(`${ROOT_URL}/signin`, user).then(response => {
+    axios.post(`${ROOT_URL}/signup`, user).then(response => {
       // on success does:
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
