@@ -23,16 +23,9 @@ class Home extends Component {
     });
   }
 
-  // onReset() {
-  //   function reset() {
-  //     this.props.posts.map((post) => {
-  //       this.props.deletePost(post.id);
-  //       return null;
-  //     });
-  //   }
-  //
-  //   reset().then(location.reload());
-  // }
+  // Removed reset functionality, if want to reimplement, render:
+  // <Link to="/" id="reset"><i className="fa fa-bomb fa" aria-hidden="true" onClick={this.onReset}> RESET BLOG</i></Link>
+
 
   render() {
     return (
@@ -43,7 +36,6 @@ class Home extends Component {
           return <Link id="homelink" to={`/posts/${post.id}`} key={post.id}><li> <i id="posttitle">{post.title}</i><i>{post.tags}</i> </li></ Link>;
         })}
         </ul>
-        <Link to="/" id="reset"><i className="fa fa-bomb fa" aria-hidden="true" onClick={this.onReset}> RESET BLOG</i></Link>
       </div>
     );
   }

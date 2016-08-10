@@ -62,7 +62,7 @@ input {
   border: none;
 }
 
-#submit, #cancel {
+#submit, #cancel  {
   color: black;
   background: none;
   padding: 5px;
@@ -75,7 +75,19 @@ input {
   font-weight: bold;
 }
 
-#submit:hover, #cancel:hover {
+#signup {
+  background: none;
+  color: black;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  font-style: italic;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+#submit:hover, #cancel:hover, #signup:hover {
   color: white;
   border-color: white;
 }
@@ -177,4 +189,20 @@ homelink:hover {
   background-color: rgba(255,255,255,0.5);
   border-radius: 5px;
   padding: 5px;
+}
+
+
+#signin {
+  color: black;
+  background: none;
+  padding: 5px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+#signin:hover {
+  color: white;
 }
