@@ -47,7 +47,6 @@ export function updatePost(post) {
 }
 
 export function fetchPost(id) {
-  console.log(`fetchpost ${id}`);
   return (dispatch) => {
     axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
       dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });

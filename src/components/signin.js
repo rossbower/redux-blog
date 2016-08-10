@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import * as actions from '../actions/index';
 import { connect } from 'react-redux';
 
@@ -21,8 +21,10 @@ class SignIn extends Component {
     event.preventDefault();
     if (this.state.SignIn) {
       this.props.signinUser({ email: this.state.email, password: this.state.password });
+      browserHistory.push('/');
     } else {
       this.props.signupUser({ name: this.state.name, email: this.state.email, password: this.state.password });
+      browserHistory.push('/');
     }
   }
 

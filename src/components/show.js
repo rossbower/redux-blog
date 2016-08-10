@@ -39,9 +39,9 @@ class Show extends Component {
     this.props.updatePost(post);
   }
 
-
   render() {
     if (!this.state.isEditing) {
+      console.log(this.props.current);
       return (
         <div id="content">
           <div id="titlebar">
@@ -51,6 +51,7 @@ class Show extends Component {
               <i id="delete" onClick={() => { this.props.deletePost(this.props.params.id); }} className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
             </div>
           </div>
+          <h5> author: {} </h5>
           <h5> tags: {this.props.current.tags} </h5>
           <div id="postcontent" dangerouslySetInnerHTML={{ __html: marked(this.props.current.content || '') }} />
         </div>

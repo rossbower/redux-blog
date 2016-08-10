@@ -18,7 +18,7 @@ class NavBar extends Component {
       return (
         <nav>
           <Link to="/" id="navLink"><i className="fa fa-home fa-2x" aria-hidden="true"></i></Link>
-          <input id="signin" type="submit" value="Sign Out" onClick={(event) => this.props.signoutUser()} />
+          <input id="signout" type="submit" value="Sign Out" onClick={(event) => this.props.signoutUser()} />
           <Link to="posts/new" id="navLink"><i className="fa fa-plus fa-2x" aria-hidden="true"></i></Link>
         </nav>
       );
