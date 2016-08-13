@@ -36,7 +36,7 @@ class SignIn extends Component {
           <input id="signup" type="submit" value="Don't have an account? Click here to sign up!" onClick={(event) => this.setState({ SignIn: false })} />
           <form>
             <input type="text" placeholder="Email" id="email" onChange={(event) => this.setState({ email: event.target.value })} />
-            <input type="text" placeholder="Password" id="password" onChange={(event) => this.setState({ password: event.target.value })} />
+            <input type="password" placeholder="Password" id="password" onChange={(event) => this.setState({ password: event.target.value })} />
             <div id="cancel-submit">
               <input id="submit" type="submit" value="Sign In" onClick={this.onSubmit} />
               <Link to="/" id="cancel">Cancel</Link>
@@ -52,7 +52,7 @@ class SignIn extends Component {
           <form>
             <input type="text" placeholder="Name" id="name" onChange={(event) => this.setState({ username: event.target.value })} />
             <input type="text" placeholder="Email" id="email" onChange={(event) => this.setState({ email: event.target.value })} />
-            <input type="text" placeholder="Password" id="password" onChange={(event) => this.setState({ password: event.target.value })} />
+            <input type="password" placeholder="Password" id="password" onChange={(event) => this.setState({ password: event.target.value })} />
             <div id="cancel-submit">
               <input id="submit" type="submit" value="Sign Up" onClick={this.onSubmit} />
               <Link to="/" id="cancel">Cancel</Link>
