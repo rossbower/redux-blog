@@ -1,9 +1,8 @@
-#HW 4 - Ross Bower
+#HW 5 - Ross Bower
 
-I created a blog which displays a list of all posts (with tags) and allows you to create, view or delete posts. There are individual routes for the home page, creating a new post, and viewing single posts. The posts are editable. Everything works :)
+For this homework, I created the API to store store posts and users for the blog. I now display authors with their corresponding posts. I decided to allow unauthorized users to see the main page, but not see the individual post OR create new post page.
+
+Everything works :)
 
 Extra Credit:
-  - Looks snazzy (x10)
-  - Markdown included
-  - Reset blog feature (removes all posts, does not yet refresh)
-  - Added functionality of refreshing page when desired (i.e. edit, delete)
+  - Additional styling of the page. Looks deliverable.

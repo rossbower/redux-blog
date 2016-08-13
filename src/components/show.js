@@ -40,36 +40,39 @@ class Show extends Component {
   }
 
   render() {
-    if (!this.state.isEditing) {
-      console.log(this.props.current);
-      return (
-        <div id="content">
-          <div id="titlebar">
-            <h2 id="heading"> {this.props.current.title} </h2>
-            <div>
-              <i id="edit" className="fa fa-pencil fa-2x" aria-hidden="true" onClick={this.onEdit}></i>
-              <i id="delete" onClick={() => { this.props.deletePost(this.props.params.id); }} className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+    if (this.props.current) {
+      if (!this.state.isEditing) {
+        return (
+          <div id="content">
+            <div id="titlebar">
+              <h2 id="heading"> {this.props.current.title} </h2>
+              <div>
+                <i id="edit" className="fa fa-pencil fa-2x" aria-hidden="true" onClick={this.onEdit}></i>
+                <i id="delete" onClick={() => { this.props.deletePost(this.props.params.id); }} className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </div>
             </div>
+            <h5> author: {this.props.current.author} </h5>
+            <h5> tags: {this.props.current.tags} </h5>
+            <div id="postcontent" dangerouslySetInnerHTML={{ __html: marked(this.props.current.content || '') }} />
           </div>
-          <h5> author: {} </h5>
-          <h5> tags: {this.props.current.tags} </h5>
-          <div id="postcontent" dangerouslySetInnerHTML={{ __html: marked(this.props.current.content || '') }} />
-        </div>
+        );
+      } else {
+        return (
+          <div id="content">
+            <div id="titlebar">
+              <Textarea id="titletextarea" defaultValue={this.props.current.title} onChange={(event) => this.setState({ title: event.target.value })} />
+              <div id="icons">
+                <i id="edit" className="fa fa-check fa-2x" aria-hidden="true" onClick={this.onSubmit}></i>
+                <i id="delete" onClick={() => { this.props.deletePost(this.props.params.id); }} className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div><Textarea id="textarea" defaultValue={this.props.current.tags} onChange={(event) => this.setState({ tags: event.target.value })} /></div>
+            <Textarea id="textarea" defaultValue={this.props.current.content} onChange={(event) => this.setState({ content: event.target.value })} />
+          </div>
       );
+      }
     } else {
-      return (
-        <div id="content">
-          <div id="titlebar">
-            <Textarea id="titletextarea" defaultValue={this.props.current.title} onChange={(event) => this.setState({ title: event.target.value })} />
-            <div id="icons">
-              <i id="edit" className="fa fa-check fa-2x" aria-hidden="true" onClick={this.onSubmit}></i>
-              <i id="delete" onClick={() => { this.props.deletePost(this.props.params.id); }} className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div><Textarea id="textarea" defaultValue={this.props.current.tags} onChange={(event) => this.setState({ tags: event.target.value })} /></div>
-          <Textarea id="textarea" defaultValue={this.props.current.content} onChange={(event) => this.setState({ content: event.target.value })} />
-        </div>
-      );
+      return <div> </div>;
     }
   }
 }

@@ -9,7 +9,7 @@ class SignIn extends Component {
 
     this.state = {
       SignIn: true,
-      name: '',
+      username: '',
       email: '',
       password: '',
     };
@@ -23,7 +23,7 @@ class SignIn extends Component {
       this.props.signinUser({ email: this.state.email, password: this.state.password });
       browserHistory.push('/');
     } else {
-      this.props.signupUser({ name: this.state.name, email: this.state.email, password: this.state.password });
+      this.props.signupUser({ username: this.state.username, email: this.state.email, password: this.state.password });
       browserHistory.push('/');
     }
   }
@@ -50,7 +50,7 @@ class SignIn extends Component {
           <h2>Sign Up!</h2>
           <input id="signup" type="submit" value="Already have an account? Click here to sign in!" onClick={(event) => this.setState({ SignIn: true })} />
           <form>
-            <input type="text" placeholder="Name" id="name" onChange={(event) => this.setState({ name: event.target.value })} />
+            <input type="text" placeholder="Name" id="name" onChange={(event) => this.setState({ username: event.target.value })} />
             <input type="text" placeholder="Email" id="email" onChange={(event) => this.setState({ email: event.target.value })} />
             <input type="text" placeholder="Password" id="password" onChange={(event) => this.setState({ password: event.target.value })} />
             <div id="cancel-submit">
